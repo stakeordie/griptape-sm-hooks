@@ -1,8 +1,8 @@
 import React from 'react';
-import { useCounterStore } from '../stores';
+import stores from '../stores/global';
 
 export function CountIncrementer() {
-    const { increment, loading } = useCounterStore();
+    const { increment, loading } = stores.counterStore;
     return (
         <div>
             <button onClick={increment} disabled={loading}>Increment</button>

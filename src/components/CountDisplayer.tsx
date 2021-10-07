@@ -1,8 +1,8 @@
 import React from 'react';
-import { useCounterStore } from '../stores';
+import stores from '../stores/global';
 
 export function CountDisplayer() {
-    const { count, loading, getCount } = useCounterStore();
+    const { loading, count, getCount } = stores.counterStore;
 
     if (loading) return (<>Loading...</>);
 

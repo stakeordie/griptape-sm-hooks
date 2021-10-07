@@ -1,6 +1,13 @@
 import { useState } from 'react';
 import { counter } from '../contracts';
 
+export interface CounterStore {
+    count?: number;
+    loading: boolean;
+    getCount(): Promise<void>;
+    increment(): Promise<void>;
+}
+
 export function useCounterStore() {
     const [count, setCount] = useState<number>();
     const [loading, setLoading] = useState(false);
